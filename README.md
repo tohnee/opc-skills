@@ -28,8 +28,28 @@
 10. **运维 (Operations)**: 保障系统稳定运行并推动持续优化
 
 ## 使用方法
-每个 Skill 位于 `skills/` 目录下，包含完整的 Prompt 定义、输入输出规范与执行步骤。
-您可以直接将对应 `.md` 文件的内容作为 System Prompt 或 Instruction 输入给 AI Agent。
+每个 Skill 位于 `skills/<skill-name>/SKILL.md`，包含完整的 Prompt 定义、输入输出规范与执行步骤。
+您可以直接将对应 `SKILL.md` 的内容作为 System Prompt 或 Instruction 输入给 AI Agent。
+
+## 安装方式
+通用安装（支持 Claude Code / Codex / OpenCode 等工具）：
+```bash
+npx skills add tohnee/opc-skills
+```
+
+安装指定技能：
+```bash
+npx skills add tohnee/opc-skills --skill creative-planning
+npx skills add tohnee/opc-skills --skill market-research
+npx skills add tohnee/opc-skills --skill proposal-writing
+npx skills add tohnee/opc-skills --skill proposal-review
+npx skills add tohnee/opc-skills --skill prd-generation
+npx skills add tohnee/opc-skills --skill project-manager
+npx skills add tohnee/opc-skills --skill development
+npx skills add tohnee/opc-skills --skill testing
+npx skills add tohnee/opc-skills --skill deployment
+npx skills add tohnee/opc-skills --skill operations
+```
 
 ## License
 MIT
