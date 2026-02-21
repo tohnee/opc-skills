@@ -6,6 +6,8 @@
 
 **哲学内核**：融合了 **Naval Ravikant** (杠杆与产品化)、**Dan Koe** (一人企业)、**Elon Musk** (第一性原理) 与 **Steve Jobs** (品味与设计) 的思想。
 
+**方法论集成**：吸收了 **Superpower (特殊知识)** 与 **Plan With Files (地图优先于疆域)** 的核心理念，将其内化到各个流程中。
+
 ## 目标
 - **全流程覆盖**：创意 -> 调研 -> 方案 -> 评审 -> PRD -> 项目管理 -> 开发 -> 测试 -> 上线 -> 运维
 - **低耦合高复用**：每个 Skill 可独立使用，也可串联成流水线
@@ -15,7 +17,7 @@
 本项目遵循通用的 Prompt/Skill 定义标准，支持在以下工具中使用：
 - Claude Code
 - Codex
-- OpenCode
+- OpenCode (OpenClaw)
 - Trae / Cursor (通过导入 `.md` 文件或配置 Prompt)
 - MCP (Model Context Protocol) Servers (可作为 Prompt Resource 接入)
 
@@ -25,14 +27,17 @@
 
 1. **创意策划 (Creative Planning)**: 生成可执行的创意方向与核心假设
    - *Philosophy*: Naval (Specific Knowledge) + Musk (First Principles)
+   - *New Feature*: 帮助挖掘用户的 **Superpower**。
 2. **市场深度调研 (Market Research)**: 验证创意方向的市场真实性与机会度
    - *Philosophy*: Dan Koe (Niche is You) + Jobs (Hidden Needs)
 3. **方案书写 (Proposal Writing)**: 将调研结论转化为完整可执行方案
 4. **方案评审 (Proposal Review)**: 系统评估方案可行性与风险
 5. **PRD迭代生成 (PRD Generation)**: 将方案转化为可执行 PRD
 6. **项目经理 (Project Manager)**: 拆解计划、排期、资源协调
+   - *Methodology*: **Plan With Files** (文件级任务拆解)
 7. **开发 (Development)**: 将 PRD 转换为可交付软件方案与代码
    - *Philosophy*: Jobs (Simplicity) + Naval (Code Leverage)
+   - *Methodology*: **Plan With Files** (文件结构先行)
 8. **测试 (Testing)**: 验证交付质量与需求匹配
 9. **上线 (Deployment)**: 将通过测试的交付物发布到生产环境
 10. **运维 (Operations)**: 保障系统稳定运行并推动持续优化
@@ -48,7 +53,8 @@
 
 ## 安装方式
 
-通用安装（支持 Claude Code / Codex / OpenCode 等工具）：
+### 1. 命令行安装 (Standard)
+通用安装（支持 Claude Code / Codex / OpenCode / OpenClaw 等工具）：
 ```bash
 npx skills add tohnee/opc-skills
 ```
@@ -56,8 +62,19 @@ npx skills add tohnee/opc-skills
 安装指定技能：
 ```bash
 npx skills add tohnee/opc-skills --skill creative-planning
-npx skills add tohnee/opc-skills --skill market-research
+npx skills add tohnee/opc-skills --skill development
 # ... (其他技能同理)
+```
+
+### 2. 手动集成 (Manual)
+将 `skills/` 目录下对应的 `.md` 文件复制到你的 Prompt 库或 Cursor Rules 中。
+
+### 3. OpenClaw 集成
+在 OpenClaw 中，可以通过以下方式直接调用：
+```yaml
+skills:
+  - url: https://github.com/tohnee/opc-skills/tree/main/skills/creative-planning
+    version: latest
 ```
 
 ## License
