@@ -126,7 +126,34 @@ skills:
 
 1. 进入 `skills/` 目录。
 2. 复制 `SKILL_ZH.md` 的内容。
-3. 粘贴到 ChatGPT / Claude 的 System Prompt 中，或者存为 Obsidian 的模板。
+### 场景 D：使用 MCP Server (New!)
+
+本项目提供了完整的 **Model Context Protocol (MCP)** 支持，可以将所有 Skills 作为 Prompts 和 Tools 暴露给支持 MCP 的客户端（如 Claude Desktop）。
+
+**1. 启动 MCP Server**
+```bash
+cd src/mcp-server
+npm install
+npm run build
+node dist/index.js
+```
+
+**2. 功能支持**
+- **Prompts**: 所有 Skill 的 Markdown 内容可作为 MCP Prompt 获取。
+- **Tools**: 所有 Skill 均注册为 MCP Tool，支持参数化调用。
+- **Tool Search**: 内置 `tool-search` 工具，支持语义化搜索合适的 Skill。
+
+### 场景 E：Programmatic Tool Calling (PTC)
+
+对于开发者，本项目提供了 `registry.json`，汇总了所有 Skill 的元数据和路径，方便在代码中动态加载。
+
+```javascript
+import registry from 'opc-skills/registry.json';
+
+// 动态查找工具
+const skill = registry['market-research'];
+console.log(skill.parameters); // 获取 JSON Schema
+```
 
 ## License
 MIT

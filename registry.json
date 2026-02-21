@@ -1,0 +1,351 @@
+{
+  "creative-planning": {
+    "name": "creative-planning",
+    "description": "Generate actionable creative directions and core assumptions, serving as the starting point for a One-Person Company (OPC) project. Infused with Naval's Specific Knowledge philosophy.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "business_goals": {
+          "type": "string",
+          "description": "The commercial or personal goals the user wishes to achieve (e.g., increase passive income, build a personal brand)."
+        },
+        "constraints": {
+          "type": "string",
+          "description": "Resource limitations (time, budget, skill stack), market scope, technical preferences."
+        },
+        "existing_insights": {
+          "type": "string",
+          "description": "Observations, fragments of inspiration, or preliminary research results the user already possesses."
+        }
+      },
+      "required": [
+        "business_goals",
+        "constraints"
+      ]
+    },
+    "path": "skills/creative-planning",
+    "prompt_zh": "skills/creative-planning/SKILL_ZH.md",
+    "prompt_en": "skills/creative-planning/SKILL_EN.md"
+  },
+  "deployment": {
+    "name": "deployment",
+    "description": "Safely deploy tested deliverables to the production environment, including rollback plans.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "acceptance_verdict": {
+          "type": "string",
+          "description": "'Ready for Launch' signal from Testing Skill."
+        },
+        "deployment_checklist": {
+          "type": "string",
+          "description": "Code version, config files, DB migration scripts, etc."
+        },
+        "rollback_plan": {
+          "type": "string",
+          "description": "How to quickly revert to the last stable version if deployment fails."
+        }
+      },
+      "required": [
+        "acceptance_verdict",
+        "deployment_checklist"
+      ]
+    },
+    "path": "skills/deployment",
+    "prompt_zh": "skills/deployment/SKILL_ZH.md",
+    "prompt_en": "skills/deployment/SKILL_EN.md"
+  },
+  "development": {
+    "name": "development",
+    "description": "Convert PRD into deliverable software solutions and code. Infused with Jobs' Simplicity and Naval's Leverage.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "prd": {
+          "type": "string",
+          "description": "Output from PRD Generation Skill."
+        },
+        "technical_constraints": {
+          "type": "string",
+          "description": "Selected tech stack (e.g., React, Node.js, Python), performance requirements, security standards."
+        },
+        "architecture_strategy": {
+          "type": "string",
+          "description": "e.g., Microservices vs Monolith, REST vs GraphQL."
+        }
+      },
+      "required": [
+        "prd",
+        "technical_constraints"
+      ]
+    },
+    "path": "skills/development",
+    "prompt_zh": "skills/development/SKILL_ZH.md",
+    "prompt_en": "skills/development/SKILL_EN.md"
+  },
+  "domain-brand": {
+    "name": "domain-brand",
+    "description": "Generate brand names, check domain availability, and provide logo design inspiration. Inspired by domain-hunter and logo-creator skills.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "creative_direction": {
+          "type": "string",
+          "description": "Core function or metaphor of the product."
+        },
+        "core_values": {
+          "type": "string",
+          "description": "Emotions to convey (e.g., Trust, Speed, Innovation)."
+        },
+        "target_audience": {
+          "type": "string",
+          "description": "Who will buy? (Developers, Housewives, Gen Z)."
+        }
+      },
+      "required": [
+        "creative_direction",
+        "core_values"
+      ]
+    },
+    "path": "skills/domain-brand",
+    "prompt_zh": "skills/domain-brand/SKILL_ZH.md",
+    "prompt_en": "skills/domain-brand/SKILL_EN.md"
+  },
+  "market-research": {
+    "name": "market-research",
+    "description": "Verify market reality & opportunity. Infused with Dan Koe's 'Niche is You' philosophy.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "creative_directions": {
+          "type": "string",
+          "description": "1-2 core ideas to verify (from Creative Planning)."
+        },
+        "target_users": {
+          "type": "string",
+          "description": "Hypothesized user personas and pain points."
+        },
+        "time_frame": {
+          "type": "string",
+          "description": "Timeliness of market data for research (e.g., past 1-2 years)."
+        }
+      },
+      "required": [
+        "creative_directions",
+        "target_users"
+      ]
+    },
+    "path": "skills/market-research",
+    "prompt_zh": "skills/market-research/SKILL_ZH.md",
+    "prompt_en": "skills/market-research/SKILL_EN.md"
+  },
+  "operations": {
+    "name": "operations",
+    "description": "Ensure system stability and drive continuous optimization. Infused with Dan Koe's 'Automation' philosophy.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "monitoring_metrics": {
+          "type": "string",
+          "description": "Key business metrics (e.g., signups) and system metrics (CPU, Memory, QPS)."
+        },
+        "alert_rules": {
+          "type": "string",
+          "description": "When to trigger alerts (e.g., CPU > 80% for 5 mins)."
+        },
+        "runbook": {
+          "type": "string",
+          "description": "Procedures for handling common incidents."
+        }
+      },
+      "required": [
+        "monitoring_metrics",
+        "alert_rules"
+      ]
+    },
+    "path": "skills/operations",
+    "prompt_zh": "skills/operations/SKILL_ZH.md",
+    "prompt_en": "skills/operations/SKILL_EN.md"
+  },
+  "prd-generation": {
+    "name": "prd-generation",
+    "description": "Translate the approved proposal into an actionable PRD, defining product details and interaction logic.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "approved_proposal": {
+          "type": "string",
+          "description": "Output from Proposal Writing, confirmed by Proposal Review."
+        },
+        "key_decisions": {
+          "type": "string",
+          "description": "Modifications and final decisions from the review process."
+        },
+        "target_users": {
+          "type": "string",
+          "description": "Core user personas and usage scenarios."
+        }
+      },
+      "required": [
+        "approved_proposal",
+        "key_decisions"
+      ]
+    },
+    "path": "skills/prd-generation",
+    "prompt_zh": "skills/prd-generation/SKILL_ZH.md",
+    "prompt_en": "skills/prd-generation/SKILL_EN.md"
+  },
+  "project-manager": {
+    "name": "project-manager",
+    "description": "Decompose PRD into actionable tasks, plan schedule and resources. Uses 'Plan With Files' methodology.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "prd": {
+          "type": "string",
+          "description": "Output from PRD Generation Skill."
+        },
+        "resource_constraints": {
+          "type": "string",
+          "description": "Time and energy limits of a 'One-Person Company'."
+        },
+        "deadline": {
+          "type": "string",
+          "description": "Expected MVP launch time."
+        }
+      },
+      "required": [
+        "prd",
+        "resource_constraints"
+      ]
+    },
+    "path": "skills/project-manager",
+    "prompt_zh": "skills/project-manager/SKILL_ZH.md",
+    "prompt_en": "skills/project-manager/SKILL_EN.md"
+  },
+  "proposal-review": {
+    "name": "proposal-review",
+    "description": "Systematically evaluate feasibility and risks of the proposal, deciding whether to proceed.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "complete_proposal": {
+          "type": "string",
+          "description": "Output from Proposal Writing Skill."
+        },
+        "review_criteria": {
+          "type": "string",
+          "description": "Focus on Technical Feasibility, Business Viability, User Desirability, and resource fit for a 'One-Person Company'."
+        }
+      },
+      "required": [
+        "complete_proposal"
+      ]
+    },
+    "path": "skills/proposal-review",
+    "prompt_zh": "skills/proposal-review/SKILL_ZH.md",
+    "prompt_en": "skills/proposal-review/SKILL_EN.md"
+  },
+  "proposal-writing": {
+    "name": "proposal-writing",
+    "description": "Convert research findings into a complete actionable proposal, defining goals, resources, and key metrics.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "research_report": {
+          "type": "string",
+          "description": "Market Research conclusions."
+        },
+        "business_goals": {
+          "type": "string",
+          "description": "Specific outcomes expected (e.g., MVP launch, acquiring first paying users)."
+        },
+        "resource_constraints": {
+          "type": "string",
+          "description": "Budget, manpower (usually 1 person for Solopreneurs), timeline."
+        }
+      },
+      "required": [
+        "research_report",
+        "business_goals"
+      ]
+    },
+    "path": "skills/proposal-writing",
+    "prompt_zh": "skills/proposal-writing/SKILL_ZH.md",
+    "prompt_en": "skills/proposal-writing/SKILL_EN.md"
+  },
+  "social-listening": {
+    "name": "social-listening",
+    "description": "Mine genuine user pain points and needs from Reddit, X, Hacker News, etc. Inspired by requesthunt and reddit skills.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "keywords": {
+          "type": "string",
+          "description": "Core terms related to product or problem (e.g., 'alternative to', 'sucks')."
+        },
+        "target_communities": {
+          "type": "string",
+          "description": "Reddit, X, Hacker News, Product Hunt."
+        },
+        "time_frame": {
+          "type": "string",
+          "description": "Recent 1-6 months."
+        }
+      },
+      "required": [
+        "keywords"
+      ]
+    },
+    "path": "skills/social-listening",
+    "prompt_zh": "skills/social-listening/SKILL_ZH.md",
+    "prompt_en": "skills/social-listening/SKILL_EN.md"
+  },
+  "testing": {
+    "name": "testing",
+    "description": "Validate delivery quality and requirement matching to ensure no major defects.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "prd": {
+          "type": "string",
+          "description": "Output from PRD Generation Skill, serving as the acceptance baseline."
+        },
+        "code_output": {
+          "type": "string",
+          "description": "Version submitted by Development Skill for testing."
+        },
+        "test_strategy": {
+          "type": "string",
+          "description": "Focus on core flows, edge cases, and exception handling."
+        }
+      },
+      "required": [
+        "prd",
+        "code_output"
+      ]
+    },
+    "path": "skills/testing",
+    "prompt_zh": "skills/testing/SKILL_ZH.md",
+    "prompt_en": "skills/testing/SKILL_EN.md"
+  },
+  "tool-search": {
+    "name": "tool-search",
+    "description": "Dynamically search and recommend the most suitable Skill based on task description. A Meta-Tool for skill discovery.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "query": {
+          "type": "string",
+          "description": "Description of the task or problem you want to solve."
+        }
+      },
+      "required": [
+        "query"
+      ]
+    },
+    "path": "skills/tool-search",
+    "prompt_zh": "skills/tool-search/SKILL_ZH.md",
+    "prompt_en": "skills/tool-search/SKILL_EN.md"
+  }
+}

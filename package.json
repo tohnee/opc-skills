@@ -34,5 +34,16 @@
     "operations": "skills/operations",
     "social-listening": "skills/social-listening",
     "domain-brand": "skills/domain-brand"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "type": "commonjs",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.26.0",
+    "@types/node": "^25.3.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3",
+    "zod": "^4.3.6"
   }
 }

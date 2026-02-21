@@ -126,7 +126,34 @@ If you don't use the tools above, you can also use them manually:
 
 1. Navigate to the `skills/` directory.
 2. Copy the content of `SKILL_EN.md`.
-3. Paste it into the System Prompt of ChatGPT / Claude, or save it as an Obsidian template.
+### Scenario D: MCP Server (Model Context Protocol) - *New!*
+
+This project provides full **Model Context Protocol (MCP)** support, exposing all Skills as Prompts and Tools to MCP-compatible clients (e.g., Claude Desktop).
+
+**1. Start MCP Server**
+```bash
+cd src/mcp-server
+npm install
+npm run build
+node dist/index.js
+```
+
+**2. Features**
+- **Prompts**: All Skill markdown content is available as MCP Prompts.
+- **Tools**: All Skills are registered as MCP Tools, supporting parameterized calls.
+- **Tool Search**: Built-in `tool-search` tool for semantic skill discovery.
+
+### Scenario E: Programmatic Tool Calling (PTC)
+
+For developers, a `registry.json` is provided, aggregating metadata and paths for all Skills for dynamic loading in code.
+
+```javascript
+import registry from 'opc-skills/registry.json';
+
+// Dynamically lookup tool
+const skill = registry['market-research'];
+console.log(skill.parameters); // Get JSON Schema
+```
 
 ## License
 MIT
