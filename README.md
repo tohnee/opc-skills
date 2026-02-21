@@ -26,6 +26,7 @@
 
 每个 Skill 均提供中文 (`SKILL_ZH.md`)、英文 (`SKILL_EN.md`) 版本，以及标准工具定义 (`skill.json`)。
 
+### 核心流程 (Core Pipeline)
 1. **创意策划 (Creative Planning)**: 生成可执行的创意方向与核心假设
    - *Philosophy*: Naval (Specific Knowledge) + Musk (First Principles)
    - *New Feature*: 帮助挖掘用户的 **Superpower**。
@@ -43,6 +44,12 @@
 9. **上线 (Deployment)**: 将通过测试的交付物发布到生产环境
 10. **运维 (Operations)**: 保障系统稳定运行并推动持续优化
     - *Philosophy*: Dan Koe (Automation & Freedom)
+
+### 战术工具 (Tactical Tools) - *New!*
+11. **社交聆听 (Social Listening)**: 从 Reddit/X/HN 挖掘真实的用户痛点
+    - *Methodology*: The Mom Test + Digital Ethnography
+12. **品牌构建 (Domain & Brand)**: 生成品牌名称、域名建议与 Logo 灵感
+    - *Philosophy*: Paul Graham (Simple Naming) + Steve Jobs (Minimalist)
 
 ## 使用方法
 

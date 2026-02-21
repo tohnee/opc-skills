@@ -20,6 +20,7 @@ output: 市场规模、竞品格局、用户痛点、机会地图
     *   不要只看外部市场。问自己：我正在解决什么问题？这个痛点是否让我夜不能寐？
     *   *Dan Koe Principle*: 你的受众就是那些面临你过去问题的人。
 2.  **痛点验证 (The Mom Test)**:
+    *   **社交聆听 (Social Listening)**: *推荐使用 `social-listening` Skill 进行深度挖掘。*
     *   **寻找真实抱怨**: 通过搜索 Reddit, X, Product Hunt, Hacker News, G2 评论。
     *   **识别虚假赞美**: 忽略 "Nice idea" 类型的反馈，只关注 "How much?" 和 "When can I use it?"。
     *   **关键词**: "How to...", "Alternative to...", "Sucks", "Annoying"。
@@ -39,6 +40,7 @@ output: 市场规模、竞品格局、用户痛点、机会地图
 - **Niche 定义**: [描述“两年前的你”作为目标用户]
 
 ### 2. 用户真实声音 (User Feedback)
+*（可引用 `social-listening` Skill 的输出）*
 - **痛点描述**: [用户原话引用或总结]
 - **来源**: [平台名称]
 - **频率**: (High/Medium/Low)

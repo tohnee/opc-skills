@@ -26,6 +26,7 @@ This project follows standard Prompt/Skill definitions and supports:
 
 Each Skill provides Chinese (`SKILL_ZH.md`), English (`SKILL_EN.md`) versions, and standard tool definition (`skill.json`).
 
+### Core Pipeline
 1. **Creative Planning**: Generate actionable creative directions & core assumptions
    - *Philosophy*: Naval (Specific Knowledge) + Musk (First Principles)
    - *New Feature*: Helps excavate user's **Superpower**.
@@ -43,6 +44,12 @@ Each Skill provides Chinese (`SKILL_ZH.md`), English (`SKILL_EN.md`) versions, a
 9. **Deployment**: Safely release to production
 10. **Operations**: Ensure stability & continuous optimization
     - *Philosophy*: Dan Koe (Automation & Freedom)
+
+### Tactical Tools - *New!*
+11. **Social Listening**: Mine genuine user pain points from Reddit/X/HN
+    - *Methodology*: The Mom Test + Digital Ethnography
+12. **Domain & Brand**: Generate brand names, domain suggestions, and Logo ideas
+    - *Philosophy*: Paul Graham (Simple Naming) + Steve Jobs (Minimalist)
 
 ## Usage
 

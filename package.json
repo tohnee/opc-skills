@@ -1,0 +1,38 @@
+{
+  "name": "opc-skills",
+  "version": "1.1.0",
+  "description": "Skills collection for One-Person Companies (Solopreneurs)",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tohnee/opc-skills.git"
+  },
+  "keywords": [
+    "skills",
+    "prompt",
+    "agent",
+    "solopreneur",
+    "opc",
+    "openclaw"
+  ],
+  "author": "Tohnee",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tohnee/opc-skills/issues"
+  },
+  "homepage": "https://github.com/tohnee/opc-skills#readme",
+  "skills": {
+    "creative-planning": "skills/creative-planning",
+    "market-research": "skills/market-research",
+    "proposal-writing": "skills/proposal-writing",
+    "proposal-review": "skills/proposal-review",
+    "prd-generation": "skills/prd-generation",
+    "project-manager": "skills/project-manager",
+    "development": "skills/development",
+    "testing": "skills/testing",
+    "deployment": "skills/deployment",
+    "operations": "skills/operations",
+    "social-listening": "skills/social-listening",
+    "domain-brand": "skills/domain-brand"
+  }
+}
