@@ -60,27 +60,73 @@ Each Skill is located in `skills/<skill-name>/`:
 
 You can choose to use Prompt (Markdown) or Tool Definition (JSON) depending on the target platform.
 
-## Installation
+## Detailed Installation & Usage Guide
 
-### 1. CLI Installation (Standard)
-Universal Install (Supports Claude Code / Codex / OpenCode, etc.):
+### Scenario A: Using CLI Tools (Claude Code / Codex / Trae)
+
+These tools typically serve as coding assistants, using `npx` to load Skills as context or prompt templates.
+
+**1. Installation**
+Run in your project root:
+
 ```bash
+# Install the full skill pack
 npx skills add tohnee/opc-skills
+
+# Or install specific skills (Recommended)
+npx skills add tohnee/opc-skills --skill creative-planning
 ```
 
-### 2. OpenClaw Integration (Agent Framework)
-OpenClaw, as an Agent Framework, can directly read the `skill.json` from the repository to implement Function Calling.
+**2. Usage**
+Once installed, the Skill content is loaded into your current context or `.cursorrules` / `.trae/rules`.
+You can invoke them directly in the chat using natural language:
 
-In OpenClaw config:
+> "Help me brainstorm a SaaS idea for indie developers based on the creative-planning guidelines."
+> "Analyze the feasibility of this idea using the market-research methodology."
+
+**3. Advanced: Chaining Skills**
+You can chain multiple skills together:
+> "First, use creative-planning to generate 3 directions, then use domain-brand to name the best one."
+
+---
+
+### Scenario B: Using Agent Framework (OpenClaw)
+
+OpenClaw is a fully autonomous Agent Framework that not only reads prompts but also performs **Function Calling** via `skill.json`, enabling true automated execution.
+
+**1. Configuration**
+Open your OpenClaw configuration file (usually `config.yaml` or `agent.yaml`) and add repository links under the `skills` section:
+
 ```yaml
 skills:
+  # Core Pipeline
   - url: https://github.com/tohnee/opc-skills/tree/main/skills/creative-planning
     version: latest
-    # OpenClaw will automatically load skill.json for tool definitions
+  - url: https://github.com/tohnee/opc-skills/tree/main/skills/market-research
+    version: latest
+  # Tactical Tools
+  - url: https://github.com/tohnee/opc-skills/tree/main/skills/social-listening
+    version: latest
 ```
 
-### 3. Manual Integration
-Copy the `.md` files from `skills/` directory to your Prompt Library or Cursor Rules.
+*Note: OpenClaw will automatically detect `skill.json` in the directory and register it as a callable tool.*
+
+**2. Usage**
+You don't need to instruct the Agent on specific steps; just provide the goal, and the Agent will automatically select the appropriate Skill to call:
+
+> **User**: "Help me research the reception of the 'Notion for Kids' idea on Reddit."
+>
+> **OpenClaw (Thinking)**: User needs research -> Matches `social-listening` tool -> Calls tool with arguments `{ keywords: "Notion for Kids", platform: "Reddit" }`.
+>
+> **OpenClaw (Executing)**: (Automatically runs scraper or search API) -> Returns pain point report.
+
+### Scenario C: Manual Integration (Cursor / Obsidian)
+
+If you don't use the tools above, you can also use them manually:
+
+1. Navigate to the `skills/` directory.
+2. Copy the content of `SKILL_EN.md`.
+3. Paste it into the System Prompt of ChatGPT / Claude, or save it as an Obsidian template.
 
 ## License
 MIT

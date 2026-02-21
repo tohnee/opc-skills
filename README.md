@@ -60,27 +60,73 @@
 
 您可以根据目标平台的特性选择使用 Prompt (Markdown) 或 Tool Definition (JSON)。
 
-## 安装方式
+## 详细安装与使用教程
 
-### 1. 命令行安装 (Standard)
-通用安装（支持 Claude Code / Codex / OpenCode 等工具）：
+### 场景 A：使用 CLI 工具 (Claude Code / Codex / Trae)
+
+此类工具通常作为辅助编码助手，通过 `npx` 加载 Skill 作为上下文或 Prompt 模板。
+
+**1. 安装**
+在你的项目根目录下运行：
+
 ```bash
+# 安装完整技能包
 npx skills add tohnee/opc-skills
+
+# 或仅安装特定技能（推荐）
+npx skills add tohnee/opc-skills --skill creative-planning
 ```
 
-### 2. OpenClaw 集成 (Agent Framework)
-OpenClaw 作为一个 Agent 框架，可以直接读取仓库中的 `skill.json` 来实现 Function Calling。
+**2. 使用方法**
+安装后，Skill 的内容会被加载到当前的上下文或 `.cursorrules` / `.trae/rules` 中。
+你可以直接在对话框中用自然语言调用：
 
-在 OpenClaw 配置文件中：
+> "请根据 creative-planning 的指导，帮我构思一个面向独立开发者的 SaaS 创意。"
+> "基于 market-research 方法论，帮我分析一下这个想法的可行性。"
+
+**3. 进阶：组合使用**
+你可以串联多个 Skill：
+> "先用 creative-planning 生成 3 个方向，然后针对最好的一个用 domain-brand 起个名字。"
+
+---
+
+### 场景 B：使用 Agent 框架 (OpenClaw)
+
+OpenClaw 是一个全自动 Agent 框架，它不仅读取 Prompt，还能通过 `skill.json` 进行**函数调用 (Function Calling)**，实现真正的自动化执行。
+
+**1. 配置**
+打开 OpenClaw 的配置文件（通常是 `config.yaml` 或 `agent.yaml`），在 `skills` 部分添加仓库链接：
+
 ```yaml
 skills:
+  # 核心流程
   - url: https://github.com/tohnee/opc-skills/tree/main/skills/creative-planning
     version: latest
-    # OpenClaw will automatically load skill.json for tool definitions
+  - url: https://github.com/tohnee/opc-skills/tree/main/skills/market-research
+    version: latest
+  # 战术工具
+  - url: https://github.com/tohnee/opc-skills/tree/main/skills/social-listening
+    version: latest
 ```
 
-### 3. 手动集成 (Manual)
-将 `skills/` 目录下对应的 `.md` 文件复制到你的 Prompt 库或 Cursor Rules 中。
+*注意：OpenClaw 会自动检测目录下的 `skill.json` 并将其注册为可调用的工具。*
+
+**2. 使用方法**
+你不需要告诉 Agent 具体步骤，只需给出目标，Agent 会自动选择合适的 Skill 进行调用：
+
+> **User**: "帮我调研一下 'Notion for Kids' 这个想法在 Reddit 上的反响。"
+>
+> **OpenClaw (思考)**: 用户需要调研 -> 匹配到 `social-listening` 工具 -> 调用工具参数 `{ keywords: "Notion for Kids", platform: "Reddit" }`。
+>
+> **OpenClaw (执行)**: (自动运行爬虫或搜索 API) -> 返回痛点报告。
+
+### 场景 C：手动集成 (Cursor / Obsidian)
+
+如果你不使用上述工具，也可以手动使用：
+
+1. 进入 `skills/` 目录。
+2. 复制 `SKILL_ZH.md` 的内容。
+3. 粘贴到 ChatGPT / Claude 的 System Prompt 中，或者存为 Obsidian 的模板。
 
 ## License
 MIT
