@@ -51,6 +51,12 @@
 12. **品牌构建 (Domain & Brand)**: 生成品牌名称、域名建议与 Logo 灵感
     - *Philosophy*: Paul Graham (Simple Naming) + Steve Jobs (Minimalist)
 
+### 专家顾问 (Expert Advisors) - *New!*
+13. **法律顾问 (Legal Advisor)**: 合同风险审查与 IP 保护
+    - *Philosophy*: 规避霸王条款，保护核心利益，替代全职法务。
+14. **增长黑客 (Growth Hacker)**: 0 预算营销策略与冷启动
+    - *Philosophy*: Lean Startup + Engineering Growth，替代全职市场经理。
+
 ## 使用方法
 
 每个 Skill 位于 `skills/<skill-name>/` 目录下：

@@ -1,0 +1,22 @@
+{
+  "name": "legal-advisor",
+  "description": "Provide contract review and IP protection advice for solopreneurs to mitigate legal risks.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "contract_text": {
+        "type": "string",
+        "description": "Specific clauses or full text to be reviewed."
+      },
+      "business_scenario": {
+        "type": "string",
+        "description": "e.g., 'SaaS Development Outsourcing', 'Content Creation Licensing'."
+      },
+      "core_concerns": {
+        "type": "string",
+        "description": "What the user is most worried about (e.g., getting paid, code theft)."
+      }
+    },
+    "required": ["contract_text"]
+  }
+}

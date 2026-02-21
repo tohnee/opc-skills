@@ -1,6 +1,6 @@
 {
   "name": "opc-skills",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Skills collection for One-Person Companies (Solopreneurs)",
   "main": "index.js",
   "repository": {
@@ -33,7 +33,9 @@
     "deployment": "skills/deployment",
     "operations": "skills/operations",
     "social-listening": "skills/social-listening",
-    "domain-brand": "skills/domain-brand"
+    "domain-brand": "skills/domain-brand",
+    "legal-advisor": "skills/legal-advisor",
+    "growth-hacker": "skills/growth-hacker"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

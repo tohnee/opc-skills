@@ -1,0 +1,22 @@
+{
+  "name": "growth-hacker",
+  "description": "Design 0-budget or low-budget growth and marketing strategies for solopreneurs.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "product_type": {
+        "type": "string",
+        "description": "SaaS, Info Product, Newsletter, Service, etc."
+      },
+      "target_audience": {
+        "type": "string",
+        "description": "Who will pay for this? (e.g., React Developers, Stay-at-home Moms)."
+      },
+      "budget": {
+        "type": "string",
+        "description": "Usually assumed to be 0 or extremely low."
+      }
+    },
+    "required": ["product_type", "target_audience"]
+  }
+}

@@ -51,6 +51,12 @@ Each Skill provides Chinese (`SKILL_ZH.md`), English (`SKILL_EN.md`) versions, a
 12. **Domain & Brand**: Generate brand names, domain suggestions, and Logo ideas
     - *Philosophy*: Paul Graham (Simple Naming) + Steve Jobs (Minimalist)
 
+### Expert Advisors - *New!*
+13. **Legal Advisor**: Contract review & IP protection
+    - *Philosophy*: Mitigate risks without a full-time lawyer.
+14. **Growth Hacker**: 0-budget marketing & cold start
+    - *Philosophy*: Lean Startup + Engineering Growth (replacing Marketing Manager).
+
 ## Usage
 
 Each Skill is located in `skills/<skill-name>/`:
