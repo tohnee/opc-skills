@@ -17,13 +17,14 @@
 本项目遵循通用的 Prompt/Skill 定义标准，支持在以下工具中使用：
 - Claude Code
 - Codex
-- OpenCode (OpenClaw)
+- OpenCode (Interpreter)
+- **OpenClaw (Agent Framework)**: 提供完整的 `skill.json` 定义以支持 Function Calling。
 - Trae / Cursor (通过导入 `.md` 文件或配置 Prompt)
 - MCP (Model Context Protocol) Servers (可作为 Prompt Resource 接入)
 
 ## 模块列表 (Bilingual Support)
 
-每个 Skill 均提供中文 (`SKILL_ZH.md`) 和英文 (`SKILL_EN.md`) 版本。
+每个 Skill 均提供中文 (`SKILL_ZH.md`)、英文 (`SKILL_EN.md`) 版本，以及标准工具定义 (`skill.json`)。
 
 1. **创意策划 (Creative Planning)**: 生成可执行的创意方向与核心假设
    - *Philosophy*: Naval (Specific Knowledge) + Musk (First Principles)
@@ -46,36 +47,33 @@
 ## 使用方法
 
 每个 Skill 位于 `skills/<skill-name>/` 目录下：
-- 中文版：`SKILL_ZH.md`
-- 英文版：`SKILL_EN.md`
+- 中文版 Prompt：`SKILL_ZH.md`
+- 英文版 Prompt：`SKILL_EN.md`
+- 工具定义 (JSON Schema)：`skill.json`
 
-您可以直接将对应 `.md` 文件的内容作为 System Prompt 或 Instruction 输入给 AI Agent。
+您可以根据目标平台的特性选择使用 Prompt (Markdown) 或 Tool Definition (JSON)。
 
 ## 安装方式
 
 ### 1. 命令行安装 (Standard)
-通用安装（支持 Claude Code / Codex / OpenCode / OpenClaw 等工具）：
+通用安装（支持 Claude Code / Codex / OpenCode 等工具）：
 ```bash
 npx skills add tohnee/opc-skills
 ```
 
-安装指定技能：
-```bash
-npx skills add tohnee/opc-skills --skill creative-planning
-npx skills add tohnee/opc-skills --skill development
-# ... (其他技能同理)
-```
+### 2. OpenClaw 集成 (Agent Framework)
+OpenClaw 作为一个 Agent 框架，可以直接读取仓库中的 `skill.json` 来实现 Function Calling。
 
-### 2. 手动集成 (Manual)
-将 `skills/` 目录下对应的 `.md` 文件复制到你的 Prompt 库或 Cursor Rules 中。
-
-### 3. OpenClaw 集成
-在 OpenClaw 中，可以通过以下方式直接调用：
+在 OpenClaw 配置文件中：
 ```yaml
 skills:
   - url: https://github.com/tohnee/opc-skills/tree/main/skills/creative-planning
     version: latest
+    # OpenClaw will automatically load skill.json for tool definitions
 ```
+
+### 3. 手动集成 (Manual)
+将 `skills/` 目录下对应的 `.md` 文件复制到你的 Prompt 库或 Cursor Rules 中。
 
 ## License
 MIT
