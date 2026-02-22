@@ -18,165 +18,140 @@ We have deeply deconstructed the battle-tested core ideas of the Silicon Valley 
 | | **Productize Yourself**<br>Leverage "Code" and "Media" as permissionless leverage. | `creative-planning` |
 | | **Do things that don't scale**<br>Manually serve your first user before writing a single line of code. | `market-research` |
 | **Execution** | **Ship Fast**<br>The best code is no code. Launch your MVP in 24 hours. | `development` |
-| | **Second Brain / PARA**<br>Projects(P)-Areas(A)-Resources(R)-Archives(A). Manage chaos with file structures. | `project-manager` |
+| | **Map Before Territory**<br>Plan with files (`task_plan.md`) before executing actions. | `project-manager` |
 | **Growth** | **Content OS**<br>Content is not art; it's a matrixed system. Create once, repurpose infinitely. | `growth-hacker` |
 | | **Volume & Authenticity**<br>In the AI era, human authenticity is scarce. Volume begets quality. | `growth-hacker` |
-| | **Video First**<br>Video builds the highest trust and is the source for content repurposing. | `growth-hacker` |
 | **System** | **Atomic Habits**<br>The core of a one-person company is the owner's habits. 1% improvement daily. | `operations` |
 | **Decision** | **Mental Models**<br>Use "Inversion" and "Second-Order Thinking" to avoid stupid decisions. | `proposal-review` |
 
-## Goals
-- **End-to-End Coverage**: Creative Planning -> Market Research -> Proposal Writing -> Review -> PRD -> Project Management -> Development -> Testing -> Deployment -> Operations
-- **Low Coupling, High Reuse**: Each Skill can be used independently or chained into a pipeline.
-- **Measurable Output**: Each stage has clear acceptance criteria and feedback loops.
+---
 
-## Compatibility
-This project follows standard Prompt/Skill definitions and supports:
-- Claude Code
-- Codex
-- OpenCode (Interpreter)
-- **OpenClaw (Agent Framework)**: Provides full `skill.json` definitions for Function Calling support.
-- Trae / Cursor (via `.md` import or Prompt config)
-- MCP (Model Context Protocol) Servers (via Prompt Resource)
+## 🧩 Skill Modules
 
-## Module List (Bilingual Support)
+### 🚀 Core Pipeline
+1. **Creative Planning**: Excavate your "Specific Knowledge" and generate high-leverage ideas.
+   - *Methodology*: Naval's Specific Knowledge + Musk's First Principles
+2. **Market Research**: Verify "Real Needs" vs "Fake Needs".
+   - *Methodology*: Dan Koe's Niche is You + The Mom Test
+3. **Proposal Writing**: Convert research into executable proposals.
+4. **Proposal Review**: The decision quality gatekeeper with stress tests and pre-mortems.
+   - *Methodology*: Shane Parrish's Inversion
+5. **PRD Generation**: Translate proposals into actionable PRDs.
+6. **Project Manager**: File-based task decomposition and scheduling.
+   - *Methodology*: **Plan With Files** + Tiago Forte's PARA
+   - *SOP*: Mandates creation of `task_plan.md`.
+7. **Development**: Ship software fast.
+   - *Methodology*: Pieter Levels' Ship Fast + **Plan With Files**
+   - *SOP*: Mandates creation of `implementation_plan.md`.
+8. **Testing**: Validate quality & requirement matching.
+9. **Deployment**: Safely release to production.
+10. **Operations**: Automated monitoring & habit formation.
+    - *Methodology*: James Clear's Atomic Habits
 
-Each Skill provides Chinese (`SKILL_ZH.md`), English (`SKILL_EN.md`) versions, and standard tool definition (`skill.json`).
+### 🛠 Tactical Tools
+11. **Social Listening**: Mine genuine complaints from Reddit/X/HN.
+12. **Domain & Brand**: Minimalist naming & brand asset building.
+    - *Methodology*: Paul Graham's Simple Naming
 
-### Core Pipeline
-1. **Creative Planning**: Generate actionable creative directions & core assumptions
-   - *Philosophy*: Naval (Specific Knowledge) + Musk (First Principles)
-   - *New Feature*: Helps excavate user's **Superpower**.
-2. **Market Research**: Verify market reality & opportunity
-   - *Philosophy*: Dan Koe (Niche is You) + Jobs (Hidden Needs)
-3. **Proposal Writing**: Convert research into executable proposals
-4. **Proposal Review**: Systematically evaluate feasibility & risks
-5. **PRD Generation**: Translate proposals into actionable PRDs
-6. **Project Manager**: Decompose tasks, schedule, & resource planning
-   - *Methodology*: **Plan With Files** (File-level task decomposition)
-7. **Development**: Convert PRD to deliverable software & code
-   - *Philosophy*: Jobs (Simplicity) + Naval (Code Leverage)
-   - *Methodology*: **Plan With Files** (Map Before Territory)
-8. **Testing**: Validate quality & requirement matching
-9. **Deployment**: Safely release to production
-10. **Operations**: Ensure stability & continuous optimization
-    - *Philosophy*: Dan Koe (Automation & Freedom)
-
-### Tactical Tools - *New!*
-11. **Social Listening**: Mine genuine user pain points from Reddit/X/HN
-    - *Methodology*: The Mom Test + Digital Ethnography
-12. **Domain & Brand**: Generate brand names, domain suggestions, and Logo ideas
-    - *Philosophy*: Paul Graham (Simple Naming) + Steve Jobs (Minimalist)
-
-### Expert Advisors - *New!*
-13. **Legal Advisor**: Contract review & IP protection
-    - *Philosophy*: Mitigate risks without a full-time lawyer.
-14. **Growth Hacker**: 0-budget marketing & cold start
-    - *Philosophy*: Lean Startup + Engineering Growth (replacing Marketing Manager).
-
-## Usage
-
-Each Skill is located in `skills/<skill-name>/`:
-- Chinese Prompt: `SKILL_ZH.md`
-- English Prompt: `SKILL_EN.md`
-- Tool Definition (JSON Schema): `skill.json`
-
-You can choose to use Prompt (Markdown) or Tool Definition (JSON) depending on the target platform.
-
-## Detailed Installation & Usage Guide
-
-### Scenario A: Using CLI Tools (Claude Code / Codex / Trae)
-
-These tools typically serve as coding assistants, using `npx` to load Skills as context or prompt templates.
-
-**1. Installation**
-Run in your project root:
-
-```bash
-# Install the full skill pack
-npx skills add tohnee/opc-skills
-
-# Or install specific skills (Recommended)
-npx skills add tohnee/opc-skills --skill creative-planning
-```
-
-**2. Usage**
-Once installed, the Skill content is loaded into your current context or `.cursorrules` / `.trae/rules`.
-You can invoke them directly in the chat using natural language:
-
-> "Help me brainstorm a SaaS idea for indie developers based on the creative-planning guidelines."
-> "Analyze the feasibility of this idea using the market-research methodology."
-
-**3. Advanced: Chaining Skills**
-You can chain multiple skills together:
-> "First, use creative-planning to generate 3 directions, then use domain-brand to name the best one."
+### 🎓 Expert Advisors
+13. **Legal Advisor**: Replace full-time legal counsel; avoid contract traps.
+14. **Growth Hacker**: Replace marketing managers; 0-budget cold start.
+    - *Methodology*: Lean Startup + Justin Welsh's Content OS
 
 ---
 
-### Scenario B: Using Agent Framework (OpenClaw)
+## 📖 Detailed Usage Guide (Step-by-Step Workflow)
 
-OpenClaw is a fully autonomous Agent Framework that not only reads prompts but also performs **Function Calling** via `skill.json`, enabling true automated execution.
+Choose the right skill combination based on your current project stage. Here are three classic workflows:
 
-**1. Configuration**
-Open your OpenClaw configuration file (usually `config.yaml` or `agent.yaml`) and add repository links under the `skills` section:
+### Scenario 1: Zero to One
+*For when you have a vague idea or just want to start something.*
 
-```yaml
-skills:
-  # Core Pipeline
-  - url: https://github.com/tohnee/opc-skills/tree/main/skills/creative-planning
-    version: latest
-  - url: https://github.com/tohnee/opc-skills/tree/main/skills/market-research
-    version: latest
-  # Tactical Tools
-  - url: https://github.com/tohnee/opc-skills/tree/main/skills/social-listening
-    version: latest
+```mermaid
+graph LR
+    A[Creative Planning] --> B[Market Research]
+    B --> C[Proposal Writing]
+    C --> D[Proposal Review]
 ```
 
-*Note: OpenClaw will automatically detect `skill.json` in the directory and register it as a callable tool.*
+1.  **Excavate Superpower**:
+    - Call `creative-planning`.
+    - Input: Your interests, skills, what feels like "play".
+    - Output: 3 creative directions based on your "Specific Knowledge".
+2.  **Verify Reality**:
+    - Call `market-research`.
+    - Input: Your favorite idea.
+    - Output: Pain point validation report. If it's a fake need, loop back to Step 1.
+3.  **Decision**:
+    - Call `proposal-review`.
+    - Input: Your proposal.
+    - Output: Go / No Go decision.
 
-**2. Usage**
-You don't need to instruct the Agent on specific steps; just provide the goal, and the Agent will automatically select the appropriate Skill to call:
+### Scenario 2: Build & Ship
+*For when the plan is set, and you need to launch an MVP in a weekend.*
 
-> **User**: "Help me research the reception of the 'Notion for Kids' idea on Reddit."
->
-> **OpenClaw (Thinking)**: User needs research -> Matches `social-listening` tool -> Calls tool with arguments `{ keywords: "Notion for Kids", platform: "Reddit" }`.
->
-> **OpenClaw (Executing)**: (Automatically runs scraper or search API) -> Returns pain point report.
+```mermaid
+graph LR
+    A[PRD Generation] --> B[Project Manager]
+    B --> C[Development]
+    C --> D[Deployment]
+```
 
-### Scenario C: Manual Integration (Cursor / Obsidian)
+1.  **Define Requirements**:
+    - Call `prd-generation` to generate a detailed PRD.
+2.  **Establish Order (Critical)**:
+    - Call `project-manager`.
+    - **SOP**: It will generate `task_plan.md` in your root. This is your command center.
+    - Output: Task list decomposed to the file level.
+3.  **Code**:
+    - Call `development`.
+    - **SOP**: Before coding, it requires `implementation_plan.md`.
+    - Input: The first task from `task_plan.md`.
+    - Output: Working code.
+4.  **Loop**: Repeat Step 3 until all boxes in `task_plan.md` are checked.
 
-If you don't use the tools above, you can also use them manually:
+### Scenario 3: Growth & System
+*For when the product is live, and you need users and stability.*
 
-1. Navigate to the `skills/` directory.
-2. Copy the content of `SKILL_EN.md`.
-### Scenario D: MCP Server (Model Context Protocol) - *New!*
+1.  **Cold Start**:
+    - Call `growth-hacker`.
+    - Input: Product type and target audience.
+    - Output: 0-budget marketing plan with "Hooks" and "Distribution Channels".
+2.  **Build Systems**:
+    - Call `operations`.
+    - Input: Your daily repetitive tasks.
+    - Output: Automation suggestions and "Atomic Habits" checklist.
 
-This project provides full **Model Context Protocol (MCP)** support, exposing all Skills as Prompts and Tools to MCP-compatible clients (e.g., Claude Desktop).
+---
 
-**1. Start MCP Server**
+## 🛠 Installation & Integration
+
+### Method 1: CLI Tool (Recommended)
+Suitable for AI coding assistants like Claude Code, Codex, Trae, etc.
+
 ```bash
-cd src/mcp-server
-npm install
-npm run build
+# Install full skill pack
+npx skills add tohnee/opc-skills
+
+# Install specific skill only
+npx skills add tohnee/opc-skills --skill creative-planning
+```
+
+### Method 2: MCP Server (Claude Desktop)
+Connect all Skills as MCP Prompts and Tools to Claude Desktop.
+
+```bash
+cd src/mcp-server && npm install && npm run build
 node dist/index.js
 ```
 
-**2. Features**
-- **Prompts**: All Skill markdown content is available as MCP Prompts.
-- **Tools**: All Skills are registered as MCP Tools, supporting parameterized calls.
-- **Tool Search**: Built-in `tool-search` tool for semantic skill discovery.
+### Method 3: Agent Framework (OpenClaw)
+Configure Skill links in `config.yaml` for fully automated Function Calling.
 
-### Scenario E: Programmatic Tool Calling (PTC)
+### Method 4: Developer Integration (PTC)
+Use `registry.json` to dynamically load Skill definitions in your code.
 
-For developers, a `registry.json` is provided, aggregating metadata and paths for all Skills for dynamic loading in code.
-
-```javascript
-import registry from 'opc-skills/registry.json';
-
-// Dynamically lookup tool
-const skill = registry['market-research'];
-console.log(skill.parameters); // Get JSON Schema
-```
+---
 
 ## License
 MIT
