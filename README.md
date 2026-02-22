@@ -4,7 +4,22 @@
 
 `opc-skills` 是面向“一人公司”场景的全流程 Skills 集合，旨在将从创意到交付的全流程分解为可独立运行、可组合、可审计的工作流模块。
 
-**哲学内核**：融合了 **Naval Ravikant** (杠杆与产品化)、**Dan Koe** (一人企业)、**Elon Musk** (第一性原理) 与 **Steve Jobs** (品味与设计) 的思想。
+**核心哲学：站在 10 位巨人的肩膀上**
+
+本项目深度整合了 X (Twitter) 上 10 位顶尖“一人公司”思想领袖的方法论，将其内化为可执行的 AI Skills：
+
+| 领域 | 思想领袖 | 核心理念 | 对应 Skill |
+| :--- | :--- | :--- | :--- |
+| **战略** | **Dan Koe** | The Niche is You (你就是利基市场) | `creative-planning` |
+| | **Naval Ravikant** | Productize Yourself (把自己产品化) | `creative-planning` |
+| | **Paul Graham** | Do things that don't scale (做不可扩展的事) | `market-research` |
+| **执行** | **Pieter Levels** | Ship Fast (极速交付) | `development` |
+| | **Tiago Forte** | Second Brain (第二大脑 / PARA) | `project-manager` |
+| | **Justin Welsh** | Content OS (内容操作系统) | `growth-hacker` |
+| **增长** | **Tim Denning** | Volume & Authenticity (高产出与真实感) | `growth-hacker` |
+| | **Roberto Blake** | Video First (视频优先) | `growth-hacker` |
+| **运营** | **James Clear** | Atomic Habits (原子习惯) | `operations` |
+| **决策** | **Shane Parrish** | Mental Models (思维模型) | `proposal-review` |
 
 **方法论集成**：吸收了 **Superpower (特殊知识)** 与 **Plan With Files (地图优先于疆域)** 的核心理念，将其内化到各个流程中。
 
@@ -34,16 +49,17 @@
    - *Philosophy*: Dan Koe (Niche is You) + Jobs (Hidden Needs)
 3. **方案书写 (Proposal Writing)**: 将调研结论转化为完整可执行方案
 4. **方案评审 (Proposal Review)**: 系统评估方案可行性与风险
+   - *Philosophy*: Shane Parrish (Mental Models)
 5. **PRD迭代生成 (PRD Generation)**: 将方案转化为可执行 PRD
 6. **项目经理 (Project Manager)**: 拆解计划、排期、资源协调
-   - *Methodology*: **Plan With Files** (文件级任务拆解)
+   - *Methodology*: **Plan With Files** + **PARA** (Tiago Forte)
 7. **开发 (Development)**: 将 PRD 转换为可交付软件方案与代码
-   - *Philosophy*: Jobs (Simplicity) + Naval (Code Leverage)
-   - *Methodology*: **Plan With Files** (文件结构先行)
+   - *Philosophy*: Pieter Levels (Ship Fast) + Naval (Code Leverage)
+   - *Methodology*: **Plan With Files** (地图优先于疆域)
 8. **测试 (Testing)**: 验证交付质量与需求匹配
 9. **上线 (Deployment)**: 将通过测试的交付物发布到生产环境
 10. **运维 (Operations)**: 保障系统稳定运行并推动持续优化
-    - *Philosophy*: Dan Koe (Automation & Freedom)
+    - *Philosophy*: James Clear (Atomic Habits) + Justin Welsh (Systems)
 
 ### 战术工具 (Tactical Tools) - *New!*
 11. **社交聆听 (Social Listening)**: 从 Reddit/X/HN 挖掘真实的用户痛点
